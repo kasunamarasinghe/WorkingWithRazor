@@ -11,17 +11,32 @@ namespace Razor.Controllers
     {
         //
         // GET: /HomeController/
-            Product myProduct = new Product {
+        Product myProduct = new Product
+        {
             ProductID = 1,
             Name = "Kayak",
             Description = "A boat for one person",
             Category = "Watersports",
             Price = 275M
-            };
-            public ActionResult Index() {
+        };
+        public ActionResult Index()
+        {
             return View(myProduct);
-            }
         }
 
+        public ActionResult NameAndPrice()
+        {
+            return View(myProduct);
+        }
+
+        public ActionResult DemoExpression()
+        {
+            ViewBag.ProductCount = 1;
+            ViewBag.ExpressShip = true;
+            ViewBag.ApplyDiscount = false;
+            ViewBag.Supplier = null;
+            return View(myProduct);
+        }
     }
+  }
 
